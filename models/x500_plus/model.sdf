@@ -121,7 +121,8 @@
         <ray>
           <scan>
             <horizontal>
-              <samples>1800</samples>
+              <!-- 1800x40 = 720k pts/s (~1.4 MB, 3.6x real MID-360S) overloaded the single parameter_bridge, desyncing FAST-LIVO2 IMU/LiDAR so the odometry ran away (~2.5 m/s).  600x40 = 240k pts/s matches the real sensor. -->
+              <samples>600</samples>
               <resolution>1</resolution>
               <min_angle>-3.14159265</min_angle>
               <max_angle>3.14159265</max_angle>
